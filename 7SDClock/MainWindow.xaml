@@ -20,5 +20,9 @@
                 VerticalAlignment="Top"
                 Click="button_Click"
                 Content="Button" />
+        <local:LedSegment x:Name="DigitHourOnes"
+                          Margin="119,41,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top" />
     </Grid>
 </Window>

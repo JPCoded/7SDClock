@@ -11,7 +11,7 @@ namespace _7SDClock
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int currentNumber = 0;
+        private int _currentNumber;
         public MainWindow()
         {
             InitializeComponent();
@@ -20,12 +20,34 @@ namespace _7SDClock
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (currentNumber > 9)
+            if (_currentNumber > 12)
             {
-                currentNumber = 0;
+                _currentNumber = 0;
             }
-            DigitHourTens.SetNumber(currentNumber);
-            currentNumber++;
+            if (_currentNumber > 9)
+            {
+                var newDigits = getDigits(_currentNumber);
+                DigitHourTens.SetNumber(newDigits[0]);
+                DigitHourOnes.SetNumber(newDigits[1]);
+            }
+            else
+            {
+                DigitHourTens.SetNumber(0);
+                DigitHourOnes.SetNumber(_currentNumber);
+            }
+            _currentNumber++;
+        }
+
+        private static int[] getDigits(int digitToBreak)
+        {
+            var count = 2;
+            var digits = new int[2];
+            while (count-- != 0)
+            {
+                digits[count] = digitToBreak%10;
+                digitToBreak /= 10;
+            }
+            return digits;
         }
     }
 }
