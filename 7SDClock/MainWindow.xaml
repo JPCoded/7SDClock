@@ -9,9 +9,16 @@
         Height="350"
         mc:Ignorable="d">
     <Grid>
-        <local:LedSegment Height="199"
+        <local:LedSegment x:Name="DigitHourTens"
                           Margin="31,41,0,0"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top" />
+        <Button x:Name="button"
+                Width="75"
+                Margin="326,59,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="button_Click"
+                Content="Button" />
     </Grid>
 </Window>
