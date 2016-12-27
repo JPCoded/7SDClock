@@ -9,7 +9,7 @@
         Height="350"
         mc:Ignorable="d">
     <Grid>
-        <local:LEDSegment Height="199"
+        <local:LedSegment Height="199"
                           Margin="31,41,0,0"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top" />
