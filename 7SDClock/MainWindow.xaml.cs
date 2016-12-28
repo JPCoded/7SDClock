@@ -20,28 +20,22 @@ namespace _7SDClock
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentNumber > 12)
+            if (_currentNumber > 59)
             {
                 _currentNumber = 0;
             }
-            if (_currentNumber > 9)
-            {
-                var newDigits = getDigits(_currentNumber);
+
+                var newDigits = GetDigits(_currentNumber);
                 DigitHourTens.SetNumber(newDigits[0]);
                 DigitHourOnes.SetNumber(newDigits[1]);
-            }
-            else
-            {
-                DigitHourTens.SetNumber(0);
-                DigitHourOnes.SetNumber(_currentNumber);
-            }
+
             _currentNumber++;
         }
 
-        private static int[] getDigits(int digitToBreak)
+        private static int[] GetDigits(int digitToBreak)
         {
             var count = 2;
-            var digits = new int[2];
+            var digits = new[] {0,0};
             while (count-- != 0)
             {
                 digits[count] = digitToBreak%10;
