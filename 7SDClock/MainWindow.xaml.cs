@@ -12,10 +12,10 @@ namespace _7SDClock
     public partial class MainWindow : Window
     {
         private int _currentNumber;
+
         public MainWindow()
         {
             InitializeComponent();
-        
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -25,21 +25,21 @@ namespace _7SDClock
                 _currentNumber = 0;
             }
 
-                var newDigits = GetDigits(_currentNumber);
-                DigitHourTens.SetNumber(newDigits[0]);
-                DigitHourOnes.SetNumber(newDigits[1]);
+            var newDigits = GetDigits(_currentNumber);
+            DigitHourTens.SetNumber(newDigits[0]);
+            DigitHourOnes.SetNumber(newDigits[1]);
 
             _currentNumber++;
         }
 
-        private static int[] GetDigits(int digitToBreak)
+        private static int[] GetDigits(int digitToSeperate)
         {
             var count = 2;
-            var digits = new[] {0,0};
+            var digits = new[] {0, 0};
             while (count-- != 0)
             {
-                digits[count] = digitToBreak%10;
-                digitToBreak /= 10;
+                digits[count] = digitToSeperate%10;
+                digitToSeperate /= 10;
             }
             return digits;
         }

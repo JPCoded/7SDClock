@@ -24,5 +24,10 @@
                           Margin="119,41,0,0"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top" />
+        <local:LedColon Width="36"
+                        Height="135"
+                        Margin="209,52,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" />
     </Grid>
 </Window>
