@@ -29,17 +29,22 @@ namespace _7SDClock
     
         private void TurnColonOn()
         {
-            SegCol1.Fill = Brushes.Red;
-            SegCol2.Fill = Brushes.Red;
-         GetColonState = ColonState.On;
+            if (GetColonState == ColonState.Off)
+            {
+                SegCol1.Fill = Brushes.Red;
+                SegCol2.Fill = Brushes.Red;
+                GetColonState = ColonState.On;
+            }
         }
 
         private void TurnColonOff()
         {
-     
-            SegCol1.Fill = Brushes.LightGray;
-            SegCol2.Fill = Brushes.LightGray;
-            GetColonState = ColonState.Off;
+            if (GetColonState == ColonState.On)
+            {
+                SegCol1.Fill = Brushes.LightGray;
+                SegCol2.Fill = Brushes.LightGray;
+                GetColonState = ColonState.Off;
+            }
         }
     }
 }
