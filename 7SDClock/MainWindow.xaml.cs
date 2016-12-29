@@ -1,7 +1,9 @@
 ﻿#region
 
+using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Threading;
 
 #endregion
 
@@ -12,25 +14,31 @@ namespace _7SDClock
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int _currentNumber;
+        private readonly DispatcherTimer _timer = new DispatcherTimer();
 
         public MainWindow()
         {
             InitializeComponent();
+            _timer.Tick += _timer_Tick1;
+            _timer.Interval = new TimeSpan(0, 0, 5);
+            _timer.Start();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void _timer_Tick1(object sender, EventArgs e)
         {
-            if (_currentNumber > 59)
+            var hours = DateTime.Now.Hour;
+            var minutes = DateTime.Now.Minute;
+            if (hours > 12)
             {
-                _currentNumber = 0;
+                hours -= 12;
             }
 
-            var newDigits = GetDigits(_currentNumber);
-            DigitHourTens.SetNumber(newDigits[0]);
-            DigitHourOnes.SetNumber(newDigits[1]);
-
-            _currentNumber++;
+            var hourDigits = GetDigits(hours);
+            var minuteDigits = GetDigits(minutes);
+            DigitHourTens.SetNumber(hourDigits[0]);
+            DigitHourOnes.SetNumber(hourDigits[1]);
+            DigitMinutesTens.SetNumber(minuteDigits[0]);
+            DigitMinutesOnes.SetNumber(minuteDigits[1]);
         }
 
         private static List<int> GetDigits(int digitToSeperate)
@@ -40,10 +48,10 @@ namespace _7SDClock
             var digits = new List<int>();
             while (count-- != 0)
             {
-               digits.Add(digitToSeperate%10);
+                digits.Add(digitToSeperate%10);
                 digitToSeperate /= 10;
             }
-             digits.Reverse();
+            digits.Reverse();
             return digits;
         }
     }

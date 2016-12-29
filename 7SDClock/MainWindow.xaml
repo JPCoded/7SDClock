@@ -10,24 +10,25 @@
         mc:Ignorable="d">
     <Grid>
         <local:LedSegment x:Name="DigitHourTens"
-                          Margin="31,41,0,0"
+                          Margin="0,1,0,0"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top" />
-        <Button x:Name="button"
-                Width="75"
-                Margin="326,59,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Click="button_Click"
-                Content="Button" />
         <local:LedSegment x:Name="DigitHourOnes"
-                          Margin="119,41,0,0"
+                          Margin="88,1,0,0"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top" />
-        <local:LedColon Width="36"
+        <local:LedColon Width="17"
                         Height="135"
-                        Margin="209,52,0,0"
+                        Margin="178,12,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top" />
+        <local:LedSegment x:Name="DigitMinutesTens"
+                          Margin="195,1,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top" />
+        <local:LedSegment x:Name="DigitMinutesOnes"
+                          Margin="283,1,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top" />
     </Grid>
 </Window>
