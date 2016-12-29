@@ -1,6 +1,5 @@
 ﻿#region
 
-using System;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -13,20 +12,13 @@ namespace _7SDClock
     /// </summary>
     public partial class LedColon : UserControl
     {
-        private enum ColonState
-        {
-            On,
-            Off
-        };
-        
-        private ColonState GetColonState { get; set; }
         public LedColon()
         {
             InitializeComponent();
         }
 
-  
-    
+        private ColonState GetColonState { get; set; }
+
         private void TurnColonOn()
         {
             if (GetColonState == ColonState.Off)
@@ -46,5 +38,11 @@ namespace _7SDClock
                 GetColonState = ColonState.Off;
             }
         }
+
+        private enum ColonState
+        {
+            On,
+            Off
+        };
     }
 }

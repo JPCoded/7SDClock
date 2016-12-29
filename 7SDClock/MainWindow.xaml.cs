@@ -1,5 +1,6 @@
 ﻿#region
 
+using System.Collections.Generic;
 using System.Windows;
 
 #endregion
@@ -32,15 +33,17 @@ namespace _7SDClock
             _currentNumber++;
         }
 
-        private static int[] GetDigits(int digitToSeperate)
+        private static List<int> GetDigits(int digitToSeperate)
         {
+            //figure way to make this dynamic
             var count = 2;
-            var digits = new[] {0, 0};
+            var digits = new List<int>();
             while (count-- != 0)
             {
-                digits[count] = digitToSeperate%10;
+               digits.Add(digitToSeperate%10);
                 digitToSeperate /= 10;
             }
+             digits.Reverse();
             return digits;
         }
     }
