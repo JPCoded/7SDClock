@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:_7SDClock"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="MainWindow"
+        Title="7 Segment Clock"
         Width="383"
-        Height="184"
+        Height="186"
         Background="White"
+        WindowStyle="ToolWindow"
         mc:Ignorable="d">
     <Grid>
         <local:LedSegment x:Name="DigitHourTens"
