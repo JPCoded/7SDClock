@@ -19,10 +19,11 @@
                           Margin="88,1,0,0"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top" />
-        <local:LedColon x:Name="segColon"
+
+        <local:LedColon x:Name="SegColon"
                         Width="17"
-                        Height="135"
-                        Margin="177,12,0,0"
+                        Height="77"
+                        Margin="176,39,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top" />
         <local:LedSegment x:Name="DigitMinutesTens"

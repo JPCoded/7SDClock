@@ -5,20 +5,26 @@
              xmlns:local="clr-namespace:_7SDClock"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              Width="15"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Top"
              mc:Ignorable="d">
-    <Grid Height="83">
-        <Ellipse x:Name="SegCol1"
-                 Width="15"
-                 Height="15"
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Fill="Red" />
-        <Ellipse x:Name="SegCol2"
-                 Width="15"
-                 Height="15"
-                 Margin="0,61,0,0"
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Fill="Red" />
+    <Grid Width="15" Height="77">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="15" Height="77">
+                <Ellipse x:Name="SegCol1"
+                         Width="15"
+                         Height="15"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top"
+                         Fill="Red" />
+                <Ellipse x:Name="SegCol2"
+                         Canvas.Top="62"
+                         Width="15"
+                         Height="15"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top"
+                         Fill="Red" />
+            </Canvas>
+        </Viewbox>
     </Grid>
 </UserControl>
