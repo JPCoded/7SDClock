@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="7 Segment Clock"
         Width="498"
-        Height="186"
+        Height="177"
         Background="White"
         WindowStyle="ToolWindow"
         mc:Ignorable="d">
@@ -34,5 +34,11 @@
                           Margin="283,1,0,0"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top" />
+        <Rectangle x:Name="recLens"
+                   Width="368"
+                   Height="147"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Fill="#CC000000" />
     </Grid>
 </Window>
