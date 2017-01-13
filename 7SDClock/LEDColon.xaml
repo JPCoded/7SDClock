@@ -8,6 +8,7 @@
              VerticalAlignment="Top"
              mc:Ignorable="d">
     <Grid Width="15" Height="77">
+
         <Viewbox Stretch="Uniform">
             <Canvas Width="15" Height="77">
                 <Ellipse x:Name="SegCol1"
@@ -26,7 +27,9 @@
                                                                       RepeatBehavior="Forever"
                                                                       Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)">
                                             <ColorAnimationUsingKeyFrames.KeyFrames>
-                                                <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red" />
+                                                <DiscreteColorKeyFrame x:Name="Segonecolor"
+                                                                       KeyTime="0:0:0"
+                                                                       Value="Red" />
                                                 <DiscreteColorKeyFrame KeyTime="0:0:1" Value="LightGray" />
                                             </ColorAnimationUsingKeyFrames.KeyFrames>
                                         </ColorAnimationUsingKeyFrames>
@@ -53,7 +56,9 @@
                                                                       RepeatBehavior="Forever"
                                                                       Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)">
                                             <ColorAnimationUsingKeyFrames.KeyFrames>
-                                                <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red" />
+                                                <DiscreteColorKeyFrame x:Name="Segtwocolor"
+                                                                       KeyTime="0:0:0"
+                                                                       Value="Red" />
                                                 <DiscreteColorKeyFrame KeyTime="0:0:1" Value="LightGray" />
                                             </ColorAnimationUsingKeyFrames.KeyFrames>
                                         </ColorAnimationUsingKeyFrames>
