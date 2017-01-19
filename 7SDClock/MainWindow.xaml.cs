@@ -22,6 +22,7 @@ namespace _7SDClock
             _timer.Tick += _timer_Tick1;
             _timer.Interval = new TimeSpan(0, 0, 5);
             _timer.Start();
+            
         
         }
 
