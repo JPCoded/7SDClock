@@ -1,6 +1,7 @@
 ﻿#region
 
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -14,8 +15,8 @@ namespace _7SDClock
     /// </summary>
     public partial class LedSegment : UserControl
     {
-        
-        private SolidColorBrush SegColor { get; set; }
+
+        private SolidColorBrush SegColor { get; set; } = Brushes.Red;
         private readonly Dictionary<int, List<char>> _numbersDictonary = new Dictionary<int, List<char>>
         {
             {0, new List<char> {'A', 'B', 'C', 'D', 'E', 'F'}},
@@ -35,7 +36,7 @@ namespace _7SDClock
         public LedSegment()
         {
             InitializeComponent();
-            SegColor = Brushes.Red;
+        
             _segmentsDictonary = new Dictionary<char, Polygon>
             {
                 {'A', SegA},
