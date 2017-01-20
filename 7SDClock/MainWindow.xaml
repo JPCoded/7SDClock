@@ -145,12 +145,14 @@
                    Fill="#CC000000" />
         <Slider x:Name="SlRed"
                 Width="124"
-                Margin="318,59,0,0"
+                Margin="318,56,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
                 RenderTransformOrigin="0.5,0.5"
-                Style="{StaticResource MyCustomStyleForSlider}">
+                SmallChange="1"
+                Style="{StaticResource MyCustomStyleForSlider}"
+                ValueChanged="Sliders_ValueChanged">
 
             <Slider.RenderTransform>
                 <TransformGroup>
@@ -163,12 +165,13 @@
         </Slider>
         <Slider x:Name="SlGreen"
                 Width="124"
-                Margin="338,59,0,0"
+                Margin="336,56,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
                 RenderTransformOrigin="0.5,0.5"
-                Style="{StaticResource MyCustomStyleForSlider}">
+                Style="{StaticResource MyCustomStyleForSlider}"
+                ValueChanged="Sliders_ValueChanged">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
@@ -180,12 +183,13 @@
         </Slider>
         <Slider x:Name="SlBlue"
                 Width="124"
-                Margin="358,59,0,0"
+                Margin="354,56,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
                 RenderTransformOrigin="0.5,0.5"
-                Style="{StaticResource MyCustomStyleForSlider}">
+                Style="{StaticResource MyCustomStyleForSlider}"
+                ValueChanged="Sliders_ValueChanged">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />

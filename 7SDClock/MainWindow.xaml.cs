@@ -56,5 +56,14 @@ namespace _7SDClock
             digits.Reverse();
             return digits;
         }
+
+        private void Sliders_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            DigitHourOnes.SetSegColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
+            DigitHourTens.SetSegColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
+            DigitMinutesOnes.SetSegColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
+            DigitMinutesTens.SetSegColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
+            SegColon.SetColonColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
+        }
     }
 }
