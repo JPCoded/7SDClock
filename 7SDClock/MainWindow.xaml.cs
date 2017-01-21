@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Threading;
+using System.Windows.Media;
 
 #endregion
 
@@ -20,7 +21,7 @@ namespace _7SDClock
         {
             InitializeComponent();
             _timer.Tick += _timer_Tick1;
-            _timer.Interval = new TimeSpan(0, 0, 5);
+            _timer.Interval = new TimeSpan(0, 0, 3);
             _timer.Start();
             
         
@@ -59,11 +60,13 @@ namespace _7SDClock
 
         private void Sliders_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            DigitHourOnes.SetSegColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
-            DigitHourTens.SetSegColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
-            DigitMinutesOnes.SetSegColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
-            DigitMinutesTens.SetSegColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
-            SegColon.SetColonColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
+            var color = new Color {R = (byte)SlRed.Value,G = (byte)SlGreen.Value,B = (byte)SlBlue.Value,A = 255 };
+            var colorBrush = new SolidColorBrush(color);
+            DigitHourOnes.SegColor = colorBrush;
+            DigitHourTens.SegColor = colorBrush;
+            DigitMinutesOnes.SegColor = colorBrush;
+            DigitMinutesTens.SegColor = colorBrush;
+           // SegColon.SetColonColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
         }
     }
 }

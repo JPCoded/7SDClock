@@ -14,14 +14,15 @@ namespace _7SDClock
     {
         public LedColon()
         {
-            InitializeComponent();       
+            InitializeComponent();
+           // Segonecolor.Value = Color.from
         }
 
         public void SetColonColor(byte red, byte green, byte blue)
         {
             var color = new Color {R = red,B=blue,G=green,A=255};
-
-            Segonecolor.Value = color;
+            var test = Segonecolor.Value;
+            Segonecolor.Value = Color.FromRgb(red, green, blue);
             Segtwocolor.Value = color;
         }
     }
