@@ -72,7 +72,7 @@ namespace _7SDClock
             DigitMinutesTens.SegColor = colorBrush;
             DigitMinutesTens.SetNumber();
 
-           // SegColon.SetColonColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
+           SegColon.SetColonColor(color);
         }
     }
 }

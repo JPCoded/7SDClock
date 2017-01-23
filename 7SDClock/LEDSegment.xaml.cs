@@ -14,9 +14,6 @@ namespace _7SDClock
     /// </summary>
     public partial class LedSegment : UserControl
     {
-
-        public int SegNumber { get; set; } = 0;
-        public SolidColorBrush SegColor { private get; set; } = Brushes.Red;
         private readonly Dictionary<int, List<char>> _numbersDictonary = new Dictionary<int, List<char>>
         {
             {0, new List<char> {'A', 'B', 'C', 'D', 'E', 'F'}},
@@ -36,7 +33,7 @@ namespace _7SDClock
         public LedSegment()
         {
             InitializeComponent();
-        
+
             _segmentsDictonary = new Dictionary<char, Polygon>
             {
                 {'A', SegA},
@@ -49,16 +46,17 @@ namespace _7SDClock
             };
         }
 
+        private int SegNumber { get; set; }
+        public SolidColorBrush SegColor { private get; set; } = Brushes.Red;
+
         public void SetNumber(int? numberToSet = null)
         {
-         
-                numberToSet = numberToSet ?? SegNumber;
-            
+            numberToSet = numberToSet ?? SegNumber;
 
             if (numberToSet <= 9 && numberToSet >= 0)
             {
-                SegNumber = (int)numberToSet;
-                var characters = _numbersDictonary[(int)numberToSet];
+                SegNumber = (int) numberToSet;
+                var characters = _numbersDictonary[(int) numberToSet];
                 foreach (var seg in _segmentsDictonary)
                 {
                     seg.Value.Fill = characters.Contains(seg.Key) ? SegColor : Brushes.LightGray;

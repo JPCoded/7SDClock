@@ -7,6 +7,19 @@
              HorizontalAlignment="Left"
              VerticalAlignment="Top"
              mc:Ignorable="d">
+    <UserControl.Resources>
+        <Storyboard x:Key="BlinkStory">
+            <ColorAnimationUsingKeyFrames Duration="0:0:2"
+                                          FillBehavior="HoldEnd"
+                                          RepeatBehavior="Forever"
+                                          Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)">
+                <ColorAnimationUsingKeyFrames.KeyFrames>
+                    <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red" />
+                    <DiscreteColorKeyFrame KeyTime="0:0:1" Value="LightGray" />
+                </ColorAnimationUsingKeyFrames.KeyFrames>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
     <Grid Width="15" Height="77">
 
         <Viewbox Stretch="Uniform">
@@ -20,21 +33,7 @@
                     <Ellipse.Triggers>
                         <EventTrigger RoutedEvent="Ellipse.Loaded">
                             <EventTrigger.Actions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="0:0:2"
-                                                                      FillBehavior="HoldEnd"
-                                                                      RepeatBehavior="Forever"
-                                                                      Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)">
-                                            <ColorAnimationUsingKeyFrames.KeyFrames>
-                                                <DiscreteColorKeyFrame x:Name="Segonecolor"
-                                                                       KeyTime="0:0:0"
-                                                                       Value="Red" />
-                                                <DiscreteColorKeyFrame KeyTime="0:0:1" Value="LightGray" />
-                                            </ColorAnimationUsingKeyFrames.KeyFrames>
-                                        </ColorAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </BeginStoryboard>
+                                <BeginStoryboard Storyboard="{StaticResource BlinkStory}" />
                             </EventTrigger.Actions>
                         </EventTrigger>
                     </Ellipse.Triggers>
@@ -49,21 +48,7 @@
                     <Ellipse.Triggers>
                         <EventTrigger RoutedEvent="Ellipse.Loaded">
                             <EventTrigger.Actions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="0:0:2"
-                                                                      FillBehavior="HoldEnd"
-                                                                      RepeatBehavior="Forever"
-                                                                      Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)">
-                                            <ColorAnimationUsingKeyFrames.KeyFrames>
-                                                <DiscreteColorKeyFrame x:Name="Segtwocolor"
-                                                                       KeyTime="0:0:0"
-                                                                       Value="Red" />
-                                                <DiscreteColorKeyFrame KeyTime="0:0:1" Value="LightGray" />
-                                            </ColorAnimationUsingKeyFrames.KeyFrames>
-                                        </ColorAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </BeginStoryboard>
+                                <BeginStoryboard Storyboard="{StaticResource BlinkStory}" />
                             </EventTrigger.Actions>
                         </EventTrigger>
                     </Ellipse.Triggers>

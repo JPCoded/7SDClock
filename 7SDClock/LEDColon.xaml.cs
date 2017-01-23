@@ -18,12 +18,11 @@ namespace _7SDClock
            // Segonecolor.Value = Color.from
         }
 
-        public void SetColonColor(byte red, byte green, byte blue)
+        public void SetColonColor(Color newColor)
         {
-            var color = new Color {R = red,B=blue,G=green,A=255};
-            var test = Segonecolor.Value;
-            Segonecolor.Value = Color.FromRgb(red, green, blue);
-            Segtwocolor.Value = color;
+        
+           // Segonecolor.Value = newColor;
+           // Segtwocolor.Value = newColor;
         }
     }
 }
