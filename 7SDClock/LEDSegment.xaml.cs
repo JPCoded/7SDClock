@@ -49,7 +49,7 @@ namespace _7SDClock
             };
         }
 
-        public void SetNumber(int? numberToSet)
+        public void SetNumber(int? numberToSet = null)
         {
          
                 numberToSet = numberToSet ?? SegNumber;

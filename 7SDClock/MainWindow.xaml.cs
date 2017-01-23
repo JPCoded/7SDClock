@@ -64,13 +64,13 @@ namespace _7SDClock
             var colorBrush = new SolidColorBrush(color);
             
             DigitHourOnes.SegColor = colorBrush;
-            DigitHourOnes.SetNumber(null);
+            DigitHourOnes.SetNumber();
             DigitHourTens.SegColor = colorBrush;
-            DigitHourTens.SetNumber(null);
+            DigitHourTens.SetNumber();
             DigitMinutesOnes.SegColor = colorBrush;
-            DigitMinutesOnes.SetNumber(null);
+            DigitMinutesOnes.SetNumber();
             DigitMinutesTens.SegColor = colorBrush;
-            DigitMinutesTens.SetNumber(null);
+            DigitMinutesTens.SetNumber();
 
            // SegColon.SetColonColor((byte)SlRed.Value, (byte)SlGreen.Value, (byte)SlBlue.Value);
         }
