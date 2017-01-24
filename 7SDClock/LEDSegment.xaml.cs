@@ -1,7 +1,7 @@
 ﻿#region
 
 using System.Collections.Generic;
-using System.Windows.Controls;
+
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -9,11 +9,13 @@ using System.Windows.Shapes;
 
 namespace _7SDClock
 {
+    
     /// <summary>
     ///     Interaction logic for LEDSegment.xaml
     /// </summary>
-    public partial class LedSegment : UserControl
+    public partial class LedSegment
     {
+       
         private readonly Dictionary<int, List<char>> _numbersDictonary = new Dictionary<int, List<char>>
         {
             {0, new List<char> {'A', 'B', 'C', 'D', 'E', 'F'}},

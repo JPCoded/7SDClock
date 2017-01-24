@@ -113,7 +113,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Width="490" HorizontalAlignment="Left">
         <local:LedSegment x:Name="DigitHourTens"
                           Margin="0,1,0,0"
                           HorizontalAlignment="Left"
@@ -145,7 +145,7 @@
                    Fill="#CC000000" />
         <Slider x:Name="SlRed"
                 Width="124"
-                Margin="318,56,0,0"
+                Margin="332,55,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
@@ -165,11 +165,12 @@
         </Slider>
         <Slider x:Name="SlGreen"
                 Width="124"
-                Margin="336,56,0,0"
+                Margin="350,55,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
                 RenderTransformOrigin="0.5,0.5"
+                SmallChange="1"
                 Style="{StaticResource MyCustomStyleForSlider}"
                 ValueChanged="Sliders_ValueChanged">
             <Slider.RenderTransform>
@@ -181,13 +182,32 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
+        <Label x:Name="lblR"
+               Margin="391,125,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="R"
+               Padding="0" />
+        <Label x:Name="lblG"
+               Margin="408,125,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="G"
+               Padding="0" />
+        <Label x:Name="lblB"
+               Margin="427,125,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="B"
+               Padding="0" />
         <Slider x:Name="SlBlue"
                 Width="124"
-                Margin="354,56,0,0"
+                Margin="369,55,-3,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
                 RenderTransformOrigin="0.5,0.5"
+                SmallChange="1"
                 Style="{StaticResource MyCustomStyleForSlider}"
                 ValueChanged="Sliders_ValueChanged">
             <Slider.RenderTransform>

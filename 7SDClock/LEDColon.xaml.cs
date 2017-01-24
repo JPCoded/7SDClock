@@ -12,6 +12,7 @@ namespace _7SDClock
     /// </summary>
     public partial class LedColon : UserControl
     {
+        public Color myColor { get; set; } = Color.FromRgb(255,0,0);
         public LedColon()
         {
             InitializeComponent();
