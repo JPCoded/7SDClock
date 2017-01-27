@@ -5,7 +5,7 @@
         xmlns:local="clr-namespace:_7SDClock"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="7 Segment Clock"
-        Width="498"
+        Width="395"
         Height="177"
         Background="White"
         WindowStyle="ToolWindow"
@@ -145,7 +145,7 @@
                    Fill="#CC000000" />
         <Slider x:Name="SlRed"
                 Width="124"
-                Margin="332,55,0,0"
+                Margin="339,55,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
@@ -165,7 +165,7 @@
         </Slider>
         <Slider x:Name="SlGreen"
                 Width="124"
-                Margin="350,55,0,0"
+                Margin="357,55,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
@@ -183,26 +183,26 @@
             </Slider.RenderTransform>
         </Slider>
         <Label x:Name="lblR"
-               Margin="391,125,0,0"
+               Margin="398,125,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="R"
                Padding="0" />
         <Label x:Name="lblG"
-               Margin="408,125,0,0"
+               Margin="415,125,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="G"
                Padding="0" />
         <Label x:Name="lblB"
-               Margin="427,125,0,0"
+               Margin="434,125,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="B"
                Padding="0" />
         <Slider x:Name="SlBlue"
                 Width="124"
-                Margin="369,55,-3,0"
+                Margin="376,55,-10,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Maximum="255"
@@ -219,5 +219,18 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
+        <Button x:Name="btnChangeWidth"
+                Width="11"
+                Height="147"
+                Margin="368,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                HorizontalContentAlignment="Left"
+                VerticalContentAlignment="Center"
+                Background="#FFC0D4FF"
+                Click="btnChangeWidth_Click"
+                Content="&gt;"
+                FontWeight="Bold"
+                Padding="0" />
     </Grid>
 </Window>

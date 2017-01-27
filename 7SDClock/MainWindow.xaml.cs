@@ -16,7 +16,7 @@ namespace _7SDClock
     public partial class MainWindow : Window
     {
         private readonly DispatcherTimer _timer = new DispatcherTimer();
-
+        private bool IsPropertiesShown { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -73,6 +73,13 @@ namespace _7SDClock
             DigitMinutesTens.SetNumber();
 
            SegColon.SetColonColor(colorBrush);
+        }
+
+        private void btnChangeWidth_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Width = IsPropertiesShown ?395: 465 ;
+            btnChangeWidth.Content = IsPropertiesShown ? ">" : "<";
+            IsPropertiesShown ^= true;
         }
     }
 }
