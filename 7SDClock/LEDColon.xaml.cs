@@ -1,7 +1,10 @@
 ﻿#region
 
+using System;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 #endregion
 
@@ -12,18 +15,35 @@ namespace _7SDClock
     /// </summary>
     public partial class LedColon : UserControl
     {
-        public Color myColor { get; set; } = Color.FromRgb(255,0,0);
+        private Brush ColorBrush { get; set; } = Brushes.Red;
+        private readonly DispatcherTimer _timer = new DispatcherTimer();
+        private bool IsBlink { get; set; } = false;
         public LedColon()
-        {
+        { 
             InitializeComponent();
-           // Segonecolor.Value = Color.from
+            _timer.Tick += _timer_Tick;
+            _timer.Interval = new TimeSpan(0, 0, 1);
+            _timer.Start();
+           
         }
 
-        public void SetColonColor(Color newColor)
+        private void _timer_Tick(object sender, EventArgs e)
         {
-        
-           // Segonecolor.Value = newColor;
-           // Segtwocolor.Value = newColor;
+            IsBlink ^= true;
+           ChangeColonColors();
+
+        }
+
+        private void ChangeColonColors()
+        {
+            SegCol1.Fill = IsBlink ? ColorBrush : Brushes.LightGray;
+            SegCol2.Fill = IsBlink ? ColorBrush : Brushes.LightGray;
+        }
+        public void SetColonColor(Brush newColor)
+        {
+           ColorBrush = newColor;
+            ChangeColonColors();
+           
         }
     }
 }

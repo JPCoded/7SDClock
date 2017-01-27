@@ -7,18 +7,22 @@
              HorizontalAlignment="Left"
              VerticalAlignment="Top"
              mc:Ignorable="d">
+
     <UserControl.Resources>
+        <!--<Color x:Key="ColorBrush" />
         <Storyboard x:Key="BlinkStory">
+
             <ColorAnimationUsingKeyFrames Duration="0:0:2"
                                           FillBehavior="HoldEnd"
                                           RepeatBehavior="Forever"
                                           Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)">
+
                 <ColorAnimationUsingKeyFrames.KeyFrames>
-                    <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red" />
+                    <DiscreteColorKeyFrame KeyTime="0:0:0" Value="{DynamicResource ColorBrush}" />
                     <DiscreteColorKeyFrame KeyTime="0:0:1" Value="LightGray" />
                 </ColorAnimationUsingKeyFrames.KeyFrames>
             </ColorAnimationUsingKeyFrames>
-        </Storyboard>
+        </Storyboard>-->
     </UserControl.Resources>
     <Grid Width="15" Height="77">
 
@@ -30,13 +34,13 @@
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red">
-                    <Ellipse.Triggers>
+                    <!--<Ellipse.Triggers>
                         <EventTrigger RoutedEvent="Ellipse.Loaded">
                             <EventTrigger.Actions>
-                                <BeginStoryboard Storyboard="{StaticResource BlinkStory}" />
+                                <BeginStoryboard Storyboard="{DynamicResource BlinkStory}" />
                             </EventTrigger.Actions>
                         </EventTrigger>
-                    </Ellipse.Triggers>
+                    </Ellipse.Triggers>-->
                 </Ellipse>
                 <Ellipse x:Name="SegCol2"
                          Canvas.Top="62"
@@ -45,13 +49,13 @@
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red">
-                    <Ellipse.Triggers>
+                    <!--<Ellipse.Triggers>
                         <EventTrigger RoutedEvent="Ellipse.Loaded">
                             <EventTrigger.Actions>
-                                <BeginStoryboard Storyboard="{StaticResource BlinkStory}" />
+                                <BeginStoryboard Storyboard="{DynamicResource BlinkStory}" />
                             </EventTrigger.Actions>
                         </EventTrigger>
-                    </Ellipse.Triggers>
+                    </Ellipse.Triggers>-->
                 </Ellipse>
             </Canvas>
         </Viewbox>
