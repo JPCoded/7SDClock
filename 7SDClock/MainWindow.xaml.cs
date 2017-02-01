@@ -15,11 +15,14 @@ namespace _7SDClock
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const int OpenWidth = 465;
+        private const int ClosedWidth = 395;
         private readonly DispatcherTimer _timer = new DispatcherTimer();
         private bool IsPropertiesShown { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            Application.Current.MainWindow.Width = ClosedWidth;
             _timer.Tick += _timer_Tick1;
             _timer.Interval = new TimeSpan(0, 0, 3);
             _timer.Start();
@@ -60,7 +63,7 @@ namespace _7SDClock
 
         private void Sliders_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            var color = new Color {R = (byte)SlRed.Value,G = (byte)SlGreen.Value,B = (byte)SlBlue.Value,A = 255 };
+            var color = new Color {R = (byte)SlRed.Value,G = (byte)SlGreen.Value,B = (byte)SlBlue.Value, A = 255 };
             var colorBrush = new SolidColorBrush(color);
             
             DigitHourOnes.SegColor = colorBrush;
@@ -77,7 +80,7 @@ namespace _7SDClock
 
         private void btnChangeWidth_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Width = IsPropertiesShown ?395: 465 ;
+            Application.Current.MainWindow.Width = IsPropertiesShown ? ClosedWidth : OpenWidth ;
             btnChangeWidth.Content = IsPropertiesShown ? ">" : "<";
             IsPropertiesShown ^= true;
         }

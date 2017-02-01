@@ -55,11 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="LEDColon.xaml">
+    <Page Include="UserControls\LEDColon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LEDSegment.xaml">
+    <Page Include="UserControls\LEDSegment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -71,10 +71,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LEDColon.xaml.cs">
+    <Compile Include="UserControls\LEDColon.xaml.cs">
       <DependentUpon>LEDColon.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LEDSegment.xaml.cs">
+    <Compile Include="UserControls\LEDSegment.xaml.cs">
       <DependentUpon>LEDSegment.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -109,6 +109,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
