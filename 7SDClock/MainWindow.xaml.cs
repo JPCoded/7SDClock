@@ -68,15 +68,10 @@ namespace _7SDClock
             var colorBrush = new SolidColorBrush(color);
             
             DigitHourOnes.SegColor = colorBrush;
-            DigitHourOnes.SetNumber();
             DigitHourTens.SegColor = colorBrush;
-            DigitHourTens.SetNumber();
             DigitMinutesOnes.SegColor = colorBrush;
-            DigitMinutesOnes.SetNumber();
             DigitMinutesTens.SegColor = colorBrush;
-            DigitMinutesTens.SetNumber();
-
-           SegColon.SetColonColor(colorBrush);
+            SegColon.SetColonColor(colorBrush);
         }
 
         private void btnChangeWidth_Click(object sender, RoutedEventArgs e)
