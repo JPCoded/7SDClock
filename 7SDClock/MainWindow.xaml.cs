@@ -50,7 +50,7 @@ namespace _7SDClock
         private static List<int> GetDigits(int digitToSeperate)
         {
            //Not best way as could use log
-            var length = Math.Floor(Math.Log10(digitToSeperate) + 1);
+            var length = (int)Math.Floor(Math.Log10(digitToSeperate) + 1);
             var count = length < 2 ? 2 : length;
             var digits = new List<int>();
             while (count-- != 0)
