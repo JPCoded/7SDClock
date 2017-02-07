@@ -4,6 +4,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
+    <UserControl.Resources>
+        <PointCollection x:Key="SegHorizontal">0,10, 10,0 50,0 60,10 50,20 10,20</PointCollection>
+        <PointCollection x:Key="SegVertical">10,0 20,10 20,50 10,60 0,50 0,10</PointCollection>
+
+    </UserControl.Resources>
     <Grid Width="85"
           HorizontalAlignment="Left"
           VerticalAlignment="Top">
@@ -14,43 +19,43 @@
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red"
-                         Points="10,0 20,10 20,50 10,60 0,50 0,10" />
+                         Points="{StaticResource SegVertical}" />
                 <Polygon x:Name="SegA"
                          Margin="13,2,0,0"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red"
-                         Points="0,10, 10,0 50,0 60,10 50,20 10,20 " />
+                         Points="{StaticResource SegHorizontal}" />
                 <Polygon x:Name="SegG"
                          Margin="13,64,0,0"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red"
-                         Points="0,10 10,0 50,0 60,10 50,20 10,20" />
+                         Points="{StaticResource SegHorizontal}" />
                 <Polygon x:Name="SegD"
                          Margin="13,126,0,0"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red"
-                         Points="0,10 10,0 50,0 60,10 50,20 10,20" />
+                         Points="{StaticResource SegHorizontal}" />
                 <Polygon x:Name="SegB"
                          Margin="64,13,-11,0"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red"
-                         Points="10,0 20,10 20,50 10,60 0,50 0,10" />
+                         Points="{StaticResource SegVertical}" />
                 <Polygon x:Name="SegC"
                          Margin="64,75,-11,0"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red"
-                         Points="10,0 20,10 20,50 10,60 0,50 0,10" />
+                         Points="{StaticResource SegVertical}" />
                 <Polygon x:Name="SegE"
                          Margin="2,75,0,0"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Fill="Red"
-                         Points="10,0 20,10 20,50 10,60 0,50 0,10" />
+                         Points="{StaticResource SegVertical}" />
             </Canvas>
         </Viewbox>
     </Grid>

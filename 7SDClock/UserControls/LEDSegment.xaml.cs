@@ -1,7 +1,6 @@
 ﻿#region
 
 using System.Collections.Generic;
-
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -9,13 +8,13 @@ using System.Windows.Shapes;
 
 namespace _7SDClock
 {
-    
     /// <summary>
     ///     Interaction logic for LEDSegment.xaml
     /// </summary>
     public partial class LedSegment
     {
         private SolidColorBrush _segColorBrush = Brushes.Red;
+
         private readonly Dictionary<int, List<char>> _numbersDictonary = new Dictionary<int, List<char>>
         {
             {0, new List<char> {'A', 'B', 'C', 'D', 'E', 'F'}},
@@ -52,17 +51,13 @@ namespace _7SDClock
 
         public SolidColorBrush SegColor
         {
-            private get
-            {
-                return _segColorBrush;
-                
-            }
+            private get { return _segColorBrush; }
             set
             {
                 SetNumber();
                 _segColorBrush = value;
             }
-        } 
+        }
 
         public void SetNumber(int? numberToSet = null)
         {

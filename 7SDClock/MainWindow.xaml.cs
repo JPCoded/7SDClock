@@ -26,8 +26,7 @@ namespace _7SDClock
             _timer.Tick += _timer_Tick1;
             _timer.Interval = new TimeSpan(0, 0, 3);
             _timer.Start();
-            
-        
+
         }
 
         private void _timer_Tick1(object sender, EventArgs e)
@@ -49,7 +48,7 @@ namespace _7SDClock
 
         private static List<int> GetDigits(int digitToSeperate)
         {
-           //Not best way as could use log
+          
             var length = (int)Math.Floor(Math.Log10(digitToSeperate) + 1);
             var count = length < 2 ? 2 : length;
             var digits = new List<int>();
