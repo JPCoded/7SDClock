@@ -64,7 +64,7 @@ namespace _7SDClock
             numberToSet = numberToSet ?? SegNumber;
             {
                 SegNumber = numberToSet.GetValueOrDefault();
-                var characters = _numbersDictonary[numberToSet.GetValueOrDefault()];
+                var characters = _numbersDictonary[SegNumber];
                 foreach (var seg in _segmentsDictonary)
                 {
                     seg.Value.Fill = characters.Contains(seg.Key) ? SegColor : Brushes.LightGray;
