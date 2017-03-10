@@ -8,7 +8,7 @@
              VerticalAlignment="Top"
              mc:Ignorable="d">
 
-     <Grid Width="15" Height="77">
+    <Grid Width="15" Height="77">
 
         <Viewbox Stretch="Uniform">
             <Canvas Width="15" Height="77">
@@ -17,16 +17,14 @@
                          Height="15"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
-                         Fill="Red">
-                </Ellipse>
+                         Fill="Red" />
                 <Ellipse x:Name="SegCol2"
                          Canvas.Top="62"
                          Width="15"
                          Height="15"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Top"
-                         Fill="Red">
-                </Ellipse>
+                         Fill="Red" />
             </Canvas>
         </Viewbox>
     </Grid>

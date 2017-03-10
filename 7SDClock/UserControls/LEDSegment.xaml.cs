@@ -62,11 +62,9 @@ namespace _7SDClock
         public void SetNumber(int? numberToSet = null)
         {
             numberToSet = numberToSet ?? SegNumber;
-
-            if (numberToSet <= 9 && numberToSet >= 0)
             {
-                SegNumber = (int) numberToSet;
-                var characters = _numbersDictonary[(int) numberToSet];
+                SegNumber = numberToSet.GetValueOrDefault();
+                var characters = _numbersDictonary[numberToSet.GetValueOrDefault()];
                 foreach (var seg in _segmentsDictonary)
                 {
                     seg.Value.Fill = characters.Contains(seg.Key) ? SegColor : Brushes.LightGray;
