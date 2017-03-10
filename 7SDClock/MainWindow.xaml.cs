@@ -3,8 +3,8 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Threading;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 #endregion
 
@@ -13,12 +13,13 @@ namespace _7SDClock
     /// <summary>
     ///     Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private const int OpenWidth = 465;
         private const int ClosedWidth = 395;
         private readonly DispatcherTimer _timer = new DispatcherTimer();
-        private bool IsPropertiesShown { get; set; }
+        private readonly Func<int, int> _getLength = x => (int) Math.Floor(Math.Log10(x) + 1);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -26,8 +27,9 @@ namespace _7SDClock
             _timer.Tick += _timer_Tick1;
             _timer.Interval = new TimeSpan(0, 0, 3);
             _timer.Start();
-
         }
+
+        private bool IsPropertiesShown { get; set; }
 
         private void _timer_Tick1(object sender, EventArgs e)
         {
@@ -46,10 +48,9 @@ namespace _7SDClock
             DigitMinutesOnes.SetNumber(minuteDigits[1]);
         }
 
-        private static List<int> GetDigits(int digitToSeperate)
+        private List<int> GetDigits(int digitToSeperate)
         {
-          
-            var length = (int)Math.Floor(Math.Log10(digitToSeperate) + 1);
+            var length = _getLength.Invoke(digitToSeperate);
             var count = length < 2 ? 2 : length;
             var digits = new List<int>();
             while (count-- != 0)
@@ -63,9 +64,8 @@ namespace _7SDClock
 
         private void Sliders_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            var color = new Color {R = (byte)SlRed.Value,G = (byte)SlGreen.Value,B = (byte)SlBlue.Value, A = 255 };
-            var colorBrush = new SolidColorBrush(color);
-            
+            var colorBrush = new SolidColorBrush( new Color { R = (byte)SlRed.Value, G = (byte)SlGreen.Value, B = (byte)SlBlue.Value, A = 255 });
+
             DigitHourOnes.SegColor = colorBrush;
             DigitHourTens.SegColor = colorBrush;
             DigitMinutesOnes.SegColor = colorBrush;
@@ -75,7 +75,7 @@ namespace _7SDClock
 
         private void btnChangeWidth_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Width = IsPropertiesShown ? ClosedWidth : OpenWidth ;
+            Application.Current.MainWindow.Width = IsPropertiesShown ? ClosedWidth : OpenWidth;
             btnChangeWidth.Content = IsPropertiesShown ? ">" : "<";
             IsPropertiesShown ^= true;
         }
