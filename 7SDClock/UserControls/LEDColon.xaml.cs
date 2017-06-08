@@ -12,7 +12,7 @@ namespace _7SDClock
     /// <summary>
     ///     Interaction logic for LEDColon.xaml
     /// </summary>
-    public partial class LedColon : UserControl
+    public sealed partial class LedColon
     {
         private readonly DispatcherTimer _timer = new DispatcherTimer();
 
@@ -39,7 +39,7 @@ namespace _7SDClock
             SegCol2.Fill = IsBlink ? ColorBrush : Brushes.LightGray;
         }
 
-        public void SetColonColor(Brush newColor)
+        internal void SetColonColor(Brush newColor)
         {
             ColorBrush = newColor;
             ChangeColonColors();
